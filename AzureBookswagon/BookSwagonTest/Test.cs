@@ -8,7 +8,7 @@ namespace AzureBookswagon.BookSwagonTest
    public class Test : Base
     {
         [Obsolete]
-        [Test]
+        [Test,Order(1)]
         public void ValidLogin()
         {
             Login login = new Login(driver);
@@ -16,6 +16,17 @@ namespace AzureBookswagon.BookSwagonTest
             string actualResult = driver.Url;
             string expectedResult = "https://www.bookswagon.com/myaccount.aspx";
             Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test, Order(2)]
+        [System.Obsolete]
+        public void SearchBookTest()
+        {
+            Search search = new Search(driver);
+            search.SearchBook();
+            string url = "https://www.bookswagon.com/search-books/mahabharata";
+            string actual = driver.Url;
+            Assert.AreEqual(url, actual);
         }
     }
 }
