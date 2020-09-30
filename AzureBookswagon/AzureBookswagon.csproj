@@ -83,6 +83,7 @@
     <Compile Include="Pages\Login.cs" />
     <Compile Include="Pages\Search.cs" />
     <Compile Include="Pages\SearchHomePage.cs" />
+    <Compile Include="Pages\ShippingAddress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

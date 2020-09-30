@@ -39,5 +39,17 @@ namespace AzureBookswagon.BookSwagonTest
             string actual = driver.Url;
             Assert.AreEqual(url, actual);
         }
+
+        [Test, Order(4)]
+        [System.Obsolete]
+        public void ShippingAddressTest()
+        {
+            ShippingAddress address = new ShippingAddress(driver);
+            address.ShippingAddessData();
+            string url = "https://www.bookswagon.com/viewshoppingcart.aspx";
+            string actual = driver.Url;
+            Assert.AreEqual(url, actual);
+           
+        }
     }
 }
