@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AzureBookswagon.Pages
 {
-   public class Search
+  public class SearchHomePage
     {
         /// <summary>
         /// create IWebDriver
@@ -17,33 +17,37 @@ namespace AzureBookswagon.Pages
         public IWebDriver driver;
 
         /// <summary>
-        /// create Search constructor
+        /// create SearchHomePage constructor
         /// </summary>
         /// <param name="driver"></param>
         [System.Obsolete]
-        public Search(IWebDriver driver)
+        public SearchHomePage(IWebDriver driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
         }
 
-        [FindsBy(How = How.Id, Using = "ctl00_TopSearch1_txtSearch")]
-        public IWebElement SearchBox;
+        [FindsBy(How = How.XPath, Using = "//div[1]//div[4]//div[5]//a[1]//input[1]")]
+        public IWebElement BuyNowButton;
 
-        [FindsBy(How = How.XPath, Using = "//body/form/div/div/div/div/div/div/div[2]/input[1]")]
-        public IWebElement SearchButton;
+        [FindsBy(How = How.XPath, Using = "//html//body//div//div//div//div//div//iframe")]
+        public IWebElement frame;
+
+        [FindsBy(How = How.XPath, Using = "//body/form/div/div/div/div/div/table/tbody/tr/td/input[1]")]
+        public IWebElement PlaceOrder;
 
         /// <summary>
-        /// create Search Book method
+        /// create Place order book method
         /// </summary>
-        public void SearchBook()
+        public void PlaceOrderBook()
         {
-            SearchBox.Click();
+            BuyNowButton.Click();
             Thread.Sleep(2000);
-            SearchBox.SendKeys("mahabharata");
+            driver.SwitchTo().Frame(frame);
             Thread.Sleep(2000);
-            SearchButton.Click();
+            PlaceOrder.Click();
             Thread.Sleep(2000);
         }
     }
 }
+   

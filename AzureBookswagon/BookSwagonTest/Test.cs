@@ -5,10 +5,10 @@ using System.Configuration;
 
 namespace AzureBookswagon.BookSwagonTest
 {
-   public class Test : Base
+    public class Test : Base
     {
         [Obsolete]
-        [Test,Order(1)]
+        [Test, Order(1)]
         public void ValidLogin()
         {
             Login login = new Login(driver);
@@ -28,6 +28,16 @@ namespace AzureBookswagon.BookSwagonTest
             string actual = driver.Url;
             Assert.AreEqual(url, actual);
         }
+
+        [Test, Order(3)]
+        [System.Obsolete]
+        public void BuyBookTest()
+        {
+            SearchHomePage search = new SearchHomePage(driver);
+            search.PlaceOrderBook();
+            string url = "https://www.bookswagon.com/checkout-login";
+            string actual = driver.Url;
+            Assert.AreEqual(url, actual);
+        }
     }
 }
-//
