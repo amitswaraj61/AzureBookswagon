@@ -49,7 +49,28 @@ namespace AzureBookswagon.BookSwagonTest
             string url = "https://www.bookswagon.com/viewshoppingcart.aspx";
             string actual = driver.Url;
             Assert.AreEqual(url, actual);
-           
+        }
+
+        [Test, Order(5)]
+        [System.Obsolete]
+        public void ReviewOderTest()
+        {
+            ReviewOrder review = new ReviewOrder(driver);
+            review.ReviewOrderCheck();
+            string url = "https://www.bookswagon.com/checkout.aspx";
+            string actual = driver.Url;
+            Assert.AreEqual(url, actual);
+        }
+
+        [Test, Order(6)]
+        [System.Obsolete]
+        public void LogoutTest()
+        {
+            Logout logout = new Logout(driver);
+            logout.LogoutToBookSwagaon();
+            string url = "https://www.bookswagon.com/login";
+            string actual = driver.Url;
+            Assert.AreEqual(url, actual);
         }
     }
 }

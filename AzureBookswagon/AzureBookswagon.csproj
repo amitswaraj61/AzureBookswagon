@@ -81,6 +81,8 @@
     <Compile Include="BookSwagonTest\Test.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Pages\Login.cs" />
+    <Compile Include="Pages\Logout.cs" />
+    <Compile Include="Pages\ReviewOrder.cs" />
     <Compile Include="Pages\Search.cs" />
     <Compile Include="Pages\SearchHomePage.cs" />
     <Compile Include="Pages\ShippingAddress.cs" />
