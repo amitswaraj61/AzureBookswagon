@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
@@ -25,6 +26,21 @@ namespace AzureBookswagon
         public void Close()
         {
             driver.Quit();
+        }
+
+        [TearDown]
+        public void AddScreenshot()
+        {
+            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+            {
+
+                Screenshot.Capture(driver, TestContext.CurrentContext.Test.Name + "   " + "Failed");
+
+            }
+            else if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Passed)
+            {
+               Screenshot.Capture(driver, TestContext.CurrentContext.Test.Name +"  " + "Passed");
+            }
         }
     }
 }
