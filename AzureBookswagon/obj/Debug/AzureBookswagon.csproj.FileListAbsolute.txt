@@ -27,3 +27,5 @@ C:\Users\Kis\source\repos\AzureBookswagon\AzureBookswagon\obj\Debug\AzureBookswa
 C:\Users\Kis\source\repos\AzureBookswagon\AzureBookswagon\obj\Debug\AzureBookswagon.csproj.CopyComplete
 C:\Users\Kis\source\repos\AzureBookswagon\AzureBookswagon\obj\Debug\AzureBookswagon.dll
 C:\Users\Kis\source\repos\AzureBookswagon\AzureBookswagon\obj\Debug\AzureBookswagon.pdb
+C:\Users\Kis\source\repos\AzureBookswagon\AzureBookswagon\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Kis\source\repos\AzureBookswagon\AzureBookswagon\bin\Debug\Newtonsoft.Json.xml
