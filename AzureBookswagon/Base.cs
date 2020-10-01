@@ -34,12 +34,14 @@ namespace AzureBookswagon
             if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
             {
 
-                Screenshot.Capture(driver, TestContext.CurrentContext.Test.Name + "   " + "Failed");
+            string path= Screenshot.Capture(driver, TestContext.CurrentContext.Test.Name + "   " + "Failed");
+                TestContext.AddTestAttachment(path, "failed");
 
             }
             else if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Passed)
             {
-               Screenshot.Capture(driver, TestContext.CurrentContext.Test.Name +"  " + "Passed");
+             string path= Screenshot.Capture(driver, TestContext.CurrentContext.Test.Name +"  " + "Passed");
+                TestContext.AddTestAttachment(path, "passed");
             }
         }
     }
