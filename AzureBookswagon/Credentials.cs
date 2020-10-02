@@ -21,7 +21,10 @@ namespace AzureBookswagon
         /// </summary>
         public Credentials()
         {
-            using (StreamReader r = new StreamReader("E:\\Amitswaraj.json"))
+            string path = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
+            string uptobinpath = path.Substring(0, path.LastIndexOf("bin"))  + "Amitswaraj.json";
+            string localPath = new Uri(uptobinpath).LocalPath;
+            using (StreamReader r = new StreamReader(localPath))
             {
                 json = r.ReadToEnd();
             }
