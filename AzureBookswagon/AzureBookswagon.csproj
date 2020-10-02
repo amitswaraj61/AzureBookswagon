@@ -83,7 +83,6 @@
     <Compile Include="Base.cs" />
     <Compile Include="BookSwagonTest\Test.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Credentials.cs" />
     <Compile Include="Pages\Login.cs" />
     <Compile Include="Pages\Logout.cs" />
     <Compile Include="Pages\ReviewOrder.cs" />

@@ -7,14 +7,14 @@ namespace AzureBookswagon.BookSwagonTest
 {
     public class Test : Base
     {
-        Credentials credentials = new Credentials();
+       
 
         [Obsolete]
         [Test, Order(1)]
         public void ValidLogin()
         {
             Login login = new Login(driver);
-            login.LoginToBookSwagaon(credentials.email, credentials.password);
+            login.LoginToBookSwagaon(ConfigurationManager.AppSettings["email"], ConfigurationManager.AppSettings["password"]);
             string actualResult = driver.Url;
             string expectedResult = "https://www.bookswagon.com/myaccount.aspx";
             Assert.AreEqual(expectedResult, actualResult);
